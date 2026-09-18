@@ -1,9 +1,9 @@
 .section .data
 msg1: .ascii "Input string 1\n"
 len1 = . - msg1
-msg2: .ascii "Input string 2\n"
+msg2: .ascii "\nInput string 2\n"
 len2 = . - msg2
-msg3: .ascii "The hamming distance between string 1 and string 2 is "
+msg3: .ascii "\nThe hamming distance between string 1 and string 2 is "
 len3 = . - msg3
 
 length: .int 256
@@ -24,6 +24,11 @@ _start:
     syscall
 
     #input for string1
+    mov $0, %rax # read
+    mov $0, %rdi # stdin
+    mov $string1,%rsi #store in string1
+    mov $length,%rdx #length
+    syscall
 
     mov $1, %rax # write
     mov $1, %rdi # stdout
@@ -32,3 +37,9 @@ _start:
     syscall
 
     #input for string2
+    mov $0, %rax # read
+    mov $0, %rdi # stdin
+    mov $string2,%rsi #store in string1
+    mov $length,%rdx #length
+    syscall
+    
