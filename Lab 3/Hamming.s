@@ -42,4 +42,7 @@ _start:
     mov $string2,%rsi #store in string1
     mov $length,%rdx #length
     syscall
-    
+
+movl $1, %eax # syscall number for sys_exit
+xorl %ebx, %ebx # return code 0
+int $0x80 # make the syscall
