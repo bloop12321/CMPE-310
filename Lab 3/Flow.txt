@@ -1,0 +1,19 @@
+reserve 256 bytes for string 1
+reserve 256 bytes for string 2
+text out "sting 1 input"
+read in string1
+text out "string 2 input"
+read in string2
+int word = 0
+    while(1){
+        jmp 19 if string1(word) == 0
+        jmp 19 if string2(word) == 0
+        xor string1(word) string2(word)
+        move xor output to reg3
+        for(int i = 1; i<= 8; i++){
+            val += reg3(right most bit)
+            shift reg3 right
+            }
+        word++
+    }
+text out "hamming distance = " val
