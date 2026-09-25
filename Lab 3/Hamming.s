@@ -43,6 +43,14 @@ _start:
     mov $length,%rdx #length
     syscall
 
+    compare:
+    mov 
+
+
+
+
+    end:
+
 movl $1, %eax # syscall number for sys_exit
 xorl %ebx, %ebx # return code 0
 int $0x80 # make the syscall
